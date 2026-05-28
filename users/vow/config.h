@@ -1,0 +1,25 @@
+/* config.h */
+
+
+#pragma once
+
+
+#define LAYER_STATE_8BIT
+#define NO_ACTION_ONESHOT
+#define EXTRA_SHORT_COMBOS
+#define COMBO_ONLY_FROM_LAYER  0
+
+#define QUICK_TAP_TERM  150
+
+
+#ifdef KEY_OVERRIDE_ENABLE
+#  define KEY_OVERRIDE_INCLUDE_WEAK_MODS
+#endif // KEY_OVERRIDE_ENABLE
+
+
+#define SPLIT_TRANSACTION_IDS_USER  LED_DATA
+
+
+#ifdef CONSOLE_ENABLE
+#  define DEBUG_MATRIX_SCAN_RATE
+#endif
