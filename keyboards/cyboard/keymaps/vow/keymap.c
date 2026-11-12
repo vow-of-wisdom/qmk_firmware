@@ -225,19 +225,6 @@ get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
 }
 
 
-/*****************
- *** Trackball ***
- *****************/
-
-
-void
-pointing_device_task_keymap(report_mouse_t report) {
-  if (get_last_keycode() != QK_MOUSE_BUTTON_1 && (report.x || report.y)) {
-    set_last_keycode(QK_MOUSE_BUTTON_1);
-  }
-}
-
-
 /*********************************
  *** Custom Keycode Processing ***
  *********************************/
