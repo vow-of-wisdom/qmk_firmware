@@ -80,5 +80,4 @@ extern const uint8_t vow_lyr_led;
 extern const uint8_t vow_mod_led;
 
 
-extern void pointing_device_task_keymap(report_mouse_t report);
 extern bool process_record_keymap(uint16_t keycode, keyrecord_t *record);

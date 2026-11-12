@@ -298,7 +298,10 @@ static bool v_scroll_enabled = false;
 
 report_mouse_t
 pointing_device_task_user(report_mouse_t report) {
-  pointing_device_task_keymap(report);
+  if (get_last_keycode() != QK_MOUSE_BUTTON_1 && (report.x || report.y)) {
+    set_last_keycode(QK_MOUSE_BUTTON_1);
+  }
+
   if (h_scroll_enabled) {
     report.h = report.x;
     report.x = report.y = 0;
@@ -306,6 +309,7 @@ pointing_device_task_user(report_mouse_t report) {
     report.v = -report.y;
     report.x = report.y = 0;
   }
+
   return report;
 }
 
