@@ -11,7 +11,9 @@
 
 #define TAPPING_TERM     350
 #define QUICK_TAP_TERM   150
+#define TAP_CODE_DELAY    10
 #define PERMISSIVE_HOLD
+#define SPECULATIVE_HOLD
 
 
 #ifdef KEY_OVERRIDE_ENABLE

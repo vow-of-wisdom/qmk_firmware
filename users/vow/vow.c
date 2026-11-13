@@ -300,6 +300,7 @@ report_mouse_t
 pointing_device_task_user(report_mouse_t report) {
   if (get_last_keycode() != QK_MOUSE_BUTTON_1 && (report.x || report.y)) {
     set_last_keycode(QK_MOUSE_BUTTON_1);
+    set_last_mods(0);
   }
 
   if (h_scroll_enabled) {
@@ -461,6 +462,7 @@ process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   case QK_MOUSE_BUTTON_1 ... QK_MOUSE_BUTTON_8 :
     set_last_keycode(QK_MOUSE_BUTTON_1);
+    set_last_mods(0);
     // fall through
 
   default :
