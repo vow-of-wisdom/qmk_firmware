@@ -32,6 +32,3 @@
 
 
 #define NO_ALT_REPEAT_KEY
-
-
-#define VOW_EXTRA_LAYERS  LYR_MED
