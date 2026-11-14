@@ -38,12 +38,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_CAPS, FR_AGRV, FR_I,    FR_E,    FR_T,    FR_V,              /**/           FR_G,    FR_S,    FR_N,    FR_R,    FR_K,    FR_DQUO,
     FR_COMM, FR_A,    FR_EACU, FR_EGRV, FR_D,    FR_W,              /**/           FR_X,    FR_C,    FR_H,    FR_M,    FR_U,    FR_DOT,
     KC_BSPC, FR_Q,    KC_MPRV, KC_MNXT, QK_AREP, QK_REP,  OS_LSFT,  /**/  KC_ENT,  KC_SPC,  OSL_SYM, KC_VOLD, KC_VOLU, FR_Z,    KC_ESC,
-    /**/                                         FR_AT,   FR_EURO,  /**/  FR_UNDS, OSL_DIA
+    /**/                                         FR_AT,   FR_HASH,  /**/  FR_UNDS, OSL_DIA
   ),
 
   [LYR_SYM] = LAYOUT(
     _______, _______, FR_5,    FR_1,    FR_3,    FR_9,              /**/           FR_8,    FR_2,    FR_0,    FR_4,    _______, _______,
-    _______, FR_7,    FR_LBRC, FR_LCBR, FR_LPRN, FR_LABK,           /**/           FR_RABK, FR_RPRN, FR_RCBR, FR_RBRC, FR_6,    FR_HASH,
+    _______, FR_7,    FR_LBRC, FR_LPRN, FR_LCBR, FR_LABK,           /**/           FR_RABK, FR_RCBR, FR_RPRN, FR_RBRC, FR_6,    FR_EURO,
     _______, FR_EQL,  FR_PIPE, FR_SLSH, FR_MINS, FR_CIRC,           /**/           FR_DLR,  FR_PLUS, FR_ASTR, FR_AMPR, FR_TILD, _______,
     _______, FR_BSLS, _______, _______, _______, _______, _______,  /**/  _______, _______, _______, _______, _______, FR_PERC, _______,
     /**/                                         _______, _______,  /**/  _______, _______
