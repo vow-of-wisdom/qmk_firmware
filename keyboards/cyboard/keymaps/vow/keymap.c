@@ -115,29 +115,6 @@ combo_t key_combos[] = {
  *********************/
 
 
-#define KO_MAKE_REPEAT(mods, trig, repl, rept)                  \
-  (const key_override_t) {                                      \
-    .options         = ko_options_default | ko_option_one_mod,  \
-    .trigger_mods    = mods,                                    \
-    .suppressed_mods = MOD_MASK_SHIFT,                          \
-    .custom_action   = repeat_override,                         \
-    .context         = (void*) rept,                            \
-    .trigger         = trig,                                    \
-    .replacement     = repl,                                    \
-    .layers          = ~0,                                      \
-  }
-
-
-static bool
-repeat_override(bool pressed, void *vkc) {
-  if (pressed) {
-    set_last_keycode((uint16_t) (uintptr_t) vkc);
-    set_last_mods(get_last_mods() & ~MOD_MASK_SHIFT);
-  }
-  return true;
-}
-
-
 const key_override_t *key_overrides[] = {
   &KO_MAKE_REPEAT(MOD_MASK_SHIFT, KC_BSPC, KC_DEL,  KC_DEL),
   &KO_MAKE_REPEAT(MOD_MASK_CSA,   KC_SPC,  KC_TAB,  KC_TAB),

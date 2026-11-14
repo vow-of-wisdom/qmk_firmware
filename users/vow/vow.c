@@ -28,6 +28,21 @@ process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 #define LYR_BIT(lyr)  (1 << lyr)
 
 
+/*********************
+ *** Key Overrides ***
+ *********************/
+
+
+bool
+repeat_override(bool pressed, void *vkc) {
+  if (pressed) {
+    set_last_keycode((uint16_t) (uintptr_t) vkc);
+    set_last_mods(get_last_mods() & ~MOD_MASK_SHIFT);
+  }
+  return true;
+}
+
+
 /******************
  *** Repeat Key ***
  ******************/

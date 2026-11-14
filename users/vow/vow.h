@@ -21,6 +21,7 @@ enum vow_layer_id {
 
 
 enum vow_keycode_id {
+  // aliases
   FR_SALL = C(FR_A),
   FR_COPY = C(FR_C),
   FR_PAST = C(FR_V),
@@ -50,6 +51,7 @@ enum vow_keycode_id {
   MOC_JMP = LGUI(FR_G),
   SND_DEV = LGUI(FR_D),
 
+  // macros
   VI_BCLR = SAFE_RANGE,
   VI_BDEL,
   VI_BNXT,
@@ -80,4 +82,18 @@ extern const uint8_t vow_lyr_led;
 extern const uint8_t vow_mod_led;
 
 
+extern bool repeat_override(bool pressed, void *vkc);
 extern bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
+
+
+#define KO_MAKE_REPEAT(mods, trig, repl, rept)                  \
+  (const key_override_t) {                                      \
+    .options         = ko_options_default | ko_option_one_mod,  \
+    .trigger_mods    = mods,                                    \
+    .suppressed_mods = MOD_MASK_SHIFT,                          \
+    .custom_action   = repeat_override,                         \
+    .context         = (void*) rept,                            \
+    .trigger         = trig,                                    \
+    .replacement     = repl,                                    \
+    .layers          = ~0,                                      \
+  }
